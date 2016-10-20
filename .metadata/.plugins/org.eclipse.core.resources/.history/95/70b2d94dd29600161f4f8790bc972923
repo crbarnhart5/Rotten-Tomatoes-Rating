@@ -53,6 +53,6 @@ public class RottenTomatoesRating {
 		File input = new File("/tmp/input.html");
 		Document doc = Jsoup.connect(url).get();
 		Elements movieName = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.details > div > a");
-		return movieName.get(0).text();
+		return movieNames.get(0).text();
 	}
 }

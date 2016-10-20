@@ -41,7 +41,7 @@ public class RottenTomatoesRating {
 		}
 	}
 	
-	//Takes Rotten Tomatoes rating of movie from given URL. 
+	//Takes Rotten Tomatoes rating of movie from given url. 
 	public static String rottenRating(String url) throws IOException{
 		File input = new File("/tmp/input.html");
 		Document doc = Jsoup.connect(url).get();
@@ -49,10 +49,7 @@ public class RottenTomatoesRating {
 		return rating.get(0).text();
 	}
 	
-	public static String rottenName(String url) throws IOException{
-		File input = new File("/tmp/input.html");
-		Document doc = Jsoup.connect(url).get();
-		Elements movieName = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.details > div > a");
-		return movieName.get(0).text();
+	public static Strin rottenName(String url){
+		
 	}
 }
