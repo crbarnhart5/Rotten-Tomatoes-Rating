@@ -18,18 +18,6 @@ public class RottenTomatoesRating {
 	
 	public static String createURL(String movie){
 		String[] splitURL = movie.split(" ");
-		if(splitURL.length < 2){
-			return movie;
-		}
-		else{
-			for(int i = 1; i < splitURL.length; i++){
-				splitURL[i] = "%20" + splitURL[i];
-			}
-			String finalURL = "";
-			for(int a = 0; a < splitURL.length; a++){
-				finalURL = finalURL + splitURL[a];
-			}
-			return finalURL;
-		}
+		
 	}
 }

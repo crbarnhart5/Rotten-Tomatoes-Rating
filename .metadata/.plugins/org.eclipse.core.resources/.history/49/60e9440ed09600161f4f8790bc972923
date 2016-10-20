@@ -15,21 +15,4 @@ public class RottenTomatoesRating {
 		System.out.println("Please enter the movie. (Be specific)");
 		String movie = in.nextLine();
 	}
-	
-	public static String createURL(String movie){
-		String[] splitURL = movie.split(" ");
-		if(splitURL.length < 2){
-			return movie;
-		}
-		else{
-			for(int i = 1; i < splitURL.length; i++){
-				splitURL[i] = "%20" + splitURL[i];
-			}
-			String finalURL = "";
-			for(int a = 0; a < splitURL.length; a++){
-				finalURL = finalURL + splitURL[a];
-			}
-			return finalURL;
-		}
-	}
 }
