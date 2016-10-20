@@ -1,0 +1,11 @@
+/**
+ * @author Connor Barnhart
+ * 
+ * Created on 10/20/2016
+ * 
+ * This program takes a movie name and returns the rating from the website
+ * rottentomatoes.com
+ */
+public class RottenTomatoesRating {
+
+}

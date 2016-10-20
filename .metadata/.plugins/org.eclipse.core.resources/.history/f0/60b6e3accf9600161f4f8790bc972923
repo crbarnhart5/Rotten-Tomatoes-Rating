@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+/**
+ * @author Connor Barnhart
+ * 
+ * Created on 10/20/2016
+ * 
+ * This program takes a movie name and returns the rating from the website
+ * rottentomatoes.com
+ */
+public class RottenTomatoesRating {
+	
+	public static void main(String[] args){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Please enter the movie. (Be specific)");
+		String movie = in.nextLine();
+	}
+}
