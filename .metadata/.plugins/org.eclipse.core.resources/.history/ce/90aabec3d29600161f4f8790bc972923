@@ -55,8 +55,4 @@ public class RottenTomatoesRating {
 		Elements movieName = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.details > div > a");
 		return movieName.get(0).text();
 	}
-	
-	public static String toString(String name, String rating){
-		return name + ": " + rating;
-	}
 }
