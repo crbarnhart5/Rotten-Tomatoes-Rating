@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
 /**
  * @author Connor Barnhart
@@ -41,10 +40,13 @@ public class RottenTomatoesRating {
 		}
 	}
 	
-	public static String rottenRating(String url) throws IOException{
+	public static String rottenRating(String url){
 		File input = new File("/tmp/input.html");
-		Document doc = Jsoup.connect(url).get();
-		Elements rating = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.tmeter > span.tMeterIcon.tiny > span.tMeterScore");
-		return rating.get(0).text();
+		try {
+			Document doc = Jsoup.connect(url).get();
+		} catch (IOException e) {
+			System.out.println("Invalid URL");
+			e.printStackTrace();
+		}
 	}
 }

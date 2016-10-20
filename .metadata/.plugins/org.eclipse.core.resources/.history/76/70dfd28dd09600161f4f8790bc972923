@@ -1,10 +1,4 @@
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
 
 /**
  * @author Connor Barnhart
@@ -20,10 +14,8 @@ public class RottenTomatoesRating {
 		Scanner in = new Scanner(System.in);
 		System.out.println("Please enter the movie. (Be specific)");
 		String movie = in.nextLine();
-		String URL = "http://www.rottentomatoes.com/search/?search=" + createURL(movie);
 	}
 	
-	//Divides each word in the movie title with '%20' for the syntax of the search URL
 	public static String createURL(String movie){
 		String[] splitURL = movie.split(" ");
 		if(splitURL.length < 2){
@@ -39,12 +31,5 @@ public class RottenTomatoesRating {
 			}
 			return finalURL;
 		}
-	}
-	
-	public static String rottenRating(String url) throws IOException{
-		File input = new File("/tmp/input.html");
-		Document doc = Jsoup.connect(url).get();
-		Elements rating = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.tmeter > span.tMeterIcon.tiny > span.tMeterScore");
-		return rating.get(0).text();
 	}
 }
