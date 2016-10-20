@@ -1,3 +1,4 @@
+import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -23,7 +24,6 @@ public class RottenTomatoesRating {
 		String rating = rottenRating(url);
 		String name = rottenName(url);
 		System.out.println(toString(name, rating));
-		in.close();
 	}
 	
 	//Divides each word in the movie title with '%20' for the syntax of the search URL
@@ -46,13 +46,14 @@ public class RottenTomatoesRating {
 	
 	//Takes Rotten Tomatoes rating of movie from given URL. 
 	public static String rottenRating(String url) throws IOException{
+		File input = new File("/tmp/input.html");
 		Document doc = Jsoup.connect(url).get();
 		Elements rating = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.tmeter > span.tMeterIcon.tiny > span.tMeterScore");
 		return rating.get(0).text();
 	}
 	
-	//Takes name of movie from rottentomatoes.com that the rating is reffering to.
 	public static String rottenName(String url) throws IOException{
+		File input = new File("/tmp/input.html");
 		Document doc = Jsoup.connect(url).get();
 		Elements movieName = doc.select("#SummaryResults > ul.results_ul > li.bottom_divider.clearfix > div.details > div > a");
 		return movieName.get(0).text();
